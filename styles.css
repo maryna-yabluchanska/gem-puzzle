@@ -1,0 +1,92 @@
+body {
+    min-width: 320px;
+    margin: 0 auto;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="button"] {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background-color: #8057b6;
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+@media (max-width: 700px) {
+    input[type="button"] {
+        padding: 3px;
+        margin: 3px;
+        font-size: 12px;
+    }
+}
+
+input[type="button"]:hover {
+    background-color: #5e13be;
+}
+
+.centre-align {
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.puzzle-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.settings-holder {
+    margin: 8px;
+}
+
+#winner-message {
+    display: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.board-container {
+    position: relative;
+    margin: 8px auto 0;
+}
+
+.board-container .puzzle-piece {
+    color: #fff;
+    background-color: #586fc0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    position: absolute;
+    transition: all 150ms ease-out;
+}
+
+.puzzle-container.won .board-container {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.puzzle-container.won #frameSize-label,
+.puzzle-container.won .settings-holder,
+.puzzle-container.won #steps-label,
+.puzzle-container.won #time-label,
+.puzzle-container.won .sound-container {
+    display: none;
+}
+
+.puzzle-container.won #winner-message {
+    display: block;
+}
